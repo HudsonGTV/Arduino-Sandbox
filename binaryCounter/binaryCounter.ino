@@ -54,7 +54,7 @@ void loop() {
 	unsigned long now = millis();
 	if(now - lastLEDUpdate >= 1000 && enableAutoCount) {
 		++displayedNum;
-		displayedNum %= 1 << DIGIT_COUNT;
+		displayedNum %= 1 << DIGIT_COUNT;		// to wrap the counter (1 << DIGIT_COUNT is the max number that can be displayed)
 		lastLEDUpdate = now;
 	}
 
